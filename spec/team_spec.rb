@@ -16,6 +16,15 @@ RSpec.describe Team do
 
       expect(team.roster).to eq([])
     end
+
+    it "returns an array of players" do
+      team = Team.new("Dodgers", "Los Angeles")
+      player_1 = Player.new("Michael Palledorous", 1000000, 36)
+
+      team.add_player(player_1)
+    
+      expect(team.roster).to eq([player_1])
+    end
   end
 
   describe "#player_count" do
