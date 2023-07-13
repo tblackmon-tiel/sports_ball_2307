@@ -54,7 +54,7 @@ class Team
     end
 
     # un-reverse the string, add the $
-    average_as_string = "$#{average_as_string.reverse}"
+    "$#{average_as_string.reverse}"
   end
 
   def players_by_last_name
