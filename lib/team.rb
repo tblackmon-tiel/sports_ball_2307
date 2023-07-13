@@ -21,9 +21,11 @@ class Team
   end
 
   def short_term_players
-    @roster.find_all do |player|
+    sorted_short_term = @roster.find_all do |player|
       player.contract_length <= 24
     end
+
+    sorted_short_term.sort_by {|player| player.contract_length}
   end
 
   def total_value
