@@ -56,4 +56,17 @@ class Team
     # un-reverse the string, add the $
     average_as_string = "$#{average_as_string.reverse}"
   end
+
+  def players_by_last_name
+    string_of_names = ""
+    last_names = @roster.map do |player|
+      player.last_name
+    end
+    
+    last_names.sort.each do |name|
+      string_of_names << "#{name}, "
+    end
+
+    string_of_names.chomp(", ")
+  end
 end
